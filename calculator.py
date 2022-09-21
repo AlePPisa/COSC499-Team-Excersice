@@ -4,3 +4,8 @@
 def division(x: float, y: float) -> float:
     return x/y
 
+def addition(num1, num2):
+    if (isinstance(num1, int, float) & isinstance(num2, int, float)):
+        return(num1 + num2)
+    else:
+        return("err")

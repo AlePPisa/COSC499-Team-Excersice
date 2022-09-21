@@ -1,5 +1,4 @@
 import unittest
-
 import calculator
 from calculator import *
 
@@ -25,6 +24,12 @@ class CalculatorTests(unittest.TestCase):
 
         with self.assertRaises(Exception):
             calculator.division(4, 0)
+            
+            
+    def test_addcase(self):
+        test = calculator.addition(1, 2)
+        expected = 3
+        self.assertEqual(test, expected)
 
 
 if __name__ == '__main__':
