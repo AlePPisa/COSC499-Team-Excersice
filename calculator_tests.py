@@ -1,4 +1,5 @@
 import unittest
+import numpy as np
 import calculator
 from calculator import *
 
@@ -30,6 +31,17 @@ class CalculatorTests(unittest.TestCase):
         test = calculator.addition(1, 2)
         expected = 3
         self.assertEqual(test, expected)
+
+    def test_multiply(self):
+        nums = np.array([[1,1],[2,2],[10,10],[50,50],[1000,1000],[-365,256],[-420,-69],[99,-1],[17,38],[600,66]])
+        ans = [1*1,2*2,10*10,50*50,1000*1000,-365*256,-420*-69,99*-1,17*38,600*66]
+
+        testAns = []
+        for i in range(0,len(nums)):
+            num1 = nums[i][0]
+            num2 = nums[i][1]
+            testAns.append(calculator.multiply(num1,num2))
+        self.assertEqual(ans, testAns)
 
 
 if __name__ == '__main__':
